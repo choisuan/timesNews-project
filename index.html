@@ -33,7 +33,7 @@
           <i class="fa-solid fa-magnifying-glass" onclick="openSearchBox()"></i>
           <span id="input-area">
             <input id="search-input" type="text" placeholder="Search" />
-            <button class="search-button" onclick="getNewsByKeyword()">
+            <button id="search-button" onclick="getNewsByKeyword()">
               Go
             </button>
           </span>
@@ -46,17 +46,19 @@
           </svg>
         </div>
         <div class="menus">
-          <button>Business</button>
-          <button>Technology</button>
-          <button>Entertainment</button>
-          <button>Science</button>
-          <button>General</button>
-          <button>Sports</button>
-          <button>Health</button>
-        </div>
-        <div class="side-menus" id="mySidenav">
-          <button class="closebtn" onclick="closeNav()">&times;</button>
-          <div class="side-menu-list" id="menu-list">
+          <div class="side-menus" id="mySidenav">
+            <i class="fa-solid fa-xmark closebtn" onclick="closeNav()"></i>
+            <div class="side-menu-list" id="menu-list">
+              <button>Business</button>
+              <button>Technology</button>
+              <button>Entertainment</button>
+              <button>Science</button>
+              <button>General</button>
+              <button>Sports</button>
+              <button>Health</button>
+            </div>
+          </div>
+          <div class="menu-list">
             <button>Business</button>
             <button>Technology</button>
             <button>Entertainment</button>
