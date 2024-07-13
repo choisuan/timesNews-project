@@ -5,13 +5,26 @@
 }
 
 .head-line {
-  margin-top: 1em;
+  margin: 0;
   display: flex;
   justify-content: center;
 }
 
 .head-line svg {
   width: 430px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 40px;
+  right: 40px;
+  z-index: 100;
+  background-color: white;
+}
+
+body {
+  padding-top: 160px;
 }
 
 .top-menu {
@@ -74,7 +87,7 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: beige;
@@ -131,13 +144,58 @@
   padding: 1em;
 }
 
-.right h2 {
+.title {
   font-weight: bold;
+  font-size: 17pt;
+  color: black;
 }
+
+.title:hover {
+  color: blue;
+}
+
+.page-item {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 1em;
+}
+
+.pagination .page-item .page-link {
+  color: #000;
+  background-color: #fff;
+  border-color: #e0dfdf;
+}
+
+.pagination .page-item.active .page-link {
+  color: black;
+  background-color: beige;
+  border-color: #e0dfdf;
+}
+
+.pagination .page-item.disabled .page-link {
+  pointer-events: none;
+}
+
 @media (max-width: 600px) {
-  .head-line {
-    margin-top: 0.5em;
+  body {
+    padding-top: 110px;
   }
+
+  .header {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .head-line {
+    padding-bottom: 1em;
+  }
+
   .head-line svg {
     width: 300px;
   }
@@ -148,7 +206,7 @@
     padding-top: 15px;
   }
   .hide {
-    display: inline;
+    display: inline !important;
   }
   .menu-list {
     display: none;

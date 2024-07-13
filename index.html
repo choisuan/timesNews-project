@@ -27,15 +27,13 @@
   </head>
   <body>
     <section class="container">
-      <section>
+      <section class="header">
         <div class="top-menu">
           <i class="fas fa-bars hide icon-button" onclick="openNav()"></i>
           <i class="fa-solid fa-magnifying-glass" onclick="openSearchBox()"></i>
           <span id="input-area">
             <input id="search-input" type="text" placeholder="Search" />
-            <button id="search-button" onclick="getNewsByKeyword()">
-              Go
-            </button>
+            <button id="search-button" onclick="getNewsByKeyword()">Go</button>
           </span>
         </div>
         <div class="head-line">
@@ -72,8 +70,12 @@
       <section id="news-board">
         <!-- 동적으로 수정 -->
       </section>
+      <nav>
+        <ul class="pagination">
+          <!-- 동적으로 수정 -->
+        </ul>
+      </nav>
     </section>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
