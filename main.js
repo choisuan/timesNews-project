@@ -152,7 +152,6 @@ const openSearchBox = () => {
 // 페이지네이션
 const paginationRender = () => {
     const totalPages = Math.ceil(totalResults / pageSize) // 총 페이지 수
-    const lastGroup = Math.ceil(totalPages / groupSize) // 마지막 페이지 그룹
     let pageGroup = Math.ceil(page / groupSize) // 현재 페이지가 어떤 그룹에 속해있는지
     let lastPage = pageGroup * groupSize // 현재 페이지가 속한 그룹의 마지막 페이지
         if(lastPage > totalPages) { // 페이지수가 5개 이하면 페이지수만큼 보여줌
@@ -161,14 +160,14 @@ const paginationRender = () => {
     let firstPage = lastPage - (groupSize - 1)<=0?1:lastPage - (groupSize - 1)  // 현재 페이지가 속한 그룹의 첫번째 페이지
   
     let paginationHTML = ``
-    if(pageGroup > 1) {
+    if(page > 1) {
     paginationHTML += `<li class="page-item" onclick="moveToPage(1)"><a class="page-link" href="#">&lt;&lt;</a>
     <li class="page-item" onclick="moveToPage(${page-1})"><a class="page-link" href="#">&lt;</a></li>` 
     }
     for(let i=firstPage; i<=lastPage; i++) {
         paginationHTML += `<li class="page-item ${i===page?"active":""}" onclick="moveToPage(${i})"><a class="page-link">${i}</a></li>`
     }
-    if(pageGroup < lastGroup) {
+    if(page < totalPages) {
     paginationHTML += `<li class="page-item" onclick="moveToPage(${page+1})"><a class="page-link" href="#">&gt;</a></li>
     <li class="page-item" onclick="moveToPage(${totalPages})"><a class="page-link" href="#">&gt;&gt;</a>`
     }
